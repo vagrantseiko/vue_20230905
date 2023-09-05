@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --mycolor01: #82BBB5;
+    --mycolor02: #CA884B;
+    --mycolor03: #D1825B;
+    --mycolor04: #CCA142;
+    --mycolor05: #E1DCD9;
+    --mycolor06: #8F8681;
+    --mycolor07: #A67F78;
+    --mycolor08: #32435F;
+    --mycolor09: #f30bae;
+    --mycolor10: beige;
+    --mycolor11: #B63D32;
+    --mycolor12: #FFC90E;
+    --mycolor13: #534126;
+    --mycolor14: #F4F4ED;
+    --mycolor15: #B63D32;
+    --mycolor16: #FFE634;
+    --myblack: #0b0b0b;
+    --mywhite: #fefaf9;
+}
+
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.demo {
+    border: 5px solid var(--mycolor01);
+    margin: 15px;
+    padding: 15px;
+}
+
+.box01 {
+    width: 180px;
+    height: 180px;
+    padding: 15px;
+    margin: 15px;
+    border: 2px solid var(--mycolor03);
+}
+
+.box02 {
+    height: 120px;
+    border: 2px solid var(--mycolor04);
+    background-color: var(--mycolor07);
+    margin-top: 15px;
+}
+
+.bg-cover {
+    background-position: center center;
+    background-size: cover;
+}

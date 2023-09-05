@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/class.css">
+    <link rel="stylesheet" href="css/mycolor.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1. v-model 綁定 -->
+        <div class="sample">
+            <h2>1. v-model 綁定</h2>
+            <input type="text" class="form-control mb-3" v-model="mytitle">
+            <p>你輸入的內容為: {{ mytitle }}</p>
+            <div v-text="mytitle"></div>
+            <div v-html="mytitle"></div>
+        </div>
+
+        <!-- 2. v-bind -->
+        <div class="sample">
+            <h2>2. v-bind (可縮寫 : )</h2>
+            <img v-bind:src="imgSrc" class="w-50">
+            <br>
+            <img :src="imgSrc" :class="classW50">
+            <input type="text" class="form-control my-3" v-model="imgSrc">
+        </div>
+
+        <!-- 3. v-for & v-if -->
+        <div class="sample">
+            <h2>3. v-for & v-if</h2>
+            <ul class="list-group">
+                <li class="list-group-item" v-for="(item, key) in list">
+                    {{ key+1 }}. {{ item.product }} 包 / {{item.price}}元
+                </li>
+            </ul>
+            <!-- v-if 和 v-for 不能寫在同一個標籤內 -->
+            <ul class="list-group my-3">
+                <template v-for="(item, key) in list">
+                    <li class="list-group-item" v-if="item.product == '低筋麵粉'">
+                        {{ key+1 }}. {{ item.product }} 包 / {{item.price}}元
+                    </li>
+                </template>
+            </ul>
+
+            <hr>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" v-on:click.prevent="mylink = '低筋麵粉'"
+                        v-bind:class="{'active' : mylink == '低筋麵粉'}">低筋麵粉</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" v-on:click.prevent="mylink = '中筋麵粉'"
+                        v-bind:class="{'active' : mylink == '中筋麵粉'}">中筋麵粉</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" v-on:click.prevent="mylink = '高筋麵粉'"
+                        v-bind:class="{'active' : mylink == '高筋麵粉'}">高筋麵粉</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" v-on:click.prevent="mylink = '砂糖'"
+                        v-bind:class="{'active' : mylink == '砂糖'}">砂糖</a>
+                </li>
+            </ul>
+            <form>
+                <div class="row text-bg-dark">
+                    <div class="col">產品</div>
+                    <div class="col">價格</div>
+                    <div class="col">重量</div>
+                </div>
+                <template v-for="item in list">
+                    <div class="row" v-if="item.product == mylink">
+                        <div class="col-4">{{ item.product }}</div>
+                        <div class="col-4">{{ item.price }}</div>
+                        <div class="col-4">{{ item.weight }}</div>
+                    </div>
+                </template>
+
+            </form>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const App = {
+            data() {
+                return {
+                    text01: 'hello world~~~',
+                    mytitle: 'vue 教學',
+                    imgSrc: 'images/cat08.jpg',
+                    classW50: 'w-50',
+                    mylink: '低筋麵粉',
+                    list: [
+                        {
+                            product: '低筋麵粉',
+                            price: 150,
+                            weight: '480克'
+                        },
+                        {
+                            product: '低筋麵粉',
+                            price: 80,
+                            weight: '240克'
+                        },
+                        {
+                            product: '中筋麵粉',
+                            price: 155,
+                            weight: '480克'
+                        },
+                        {
+                            product: '中筋麵粉',
+                            price: 85,
+                            weight: '240克'
+                        },
+                        {
+                            product: '高筋麵粉',
+                            price: 160,
+                            weight: '480克'
+                        },
+                        {
+                            product: '高筋麵粉',
+                            price: 95,
+                            weight: '240克'
+                        },
+                        {
+                            product: '砂糖',
+                            price: 120,
+                            weight: '480克'
+                        },
+                        {
+                            product: '砂糖',
+                            price: 60,
+                            weight: '240克'
+                        },
+                    ]
+
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>

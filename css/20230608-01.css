@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100;200;300;400;500&display=swap');
+
+body {
+    font-family: 'Noto Serif', serif;
+}
+
+:root {
+    --green01: #081c15;
+    --green02: #1b4332;
+    --green03: #2d6a4f;
+    --green04: #a3b18a;
+    --green05: #dad7cd;
+    --green06: #84a98c;
+    --green07: #52796f;
+    --green08: #354f52;
+    --black: #000000;
+}
+
+.section01 {
+    height: 100vh;
+    /* 高度符合螢幕高度 */
+    background-color: var(--green01);
+    position: relative;
+}
+
+.box01 {
+    width: 200px;
+    height: 200px;
+    background-color: var(--green05);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box02 {
+    width: 200px;
+    height: 200px;
+    background-color: var(--green05);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.box03 {
+    width: 200px;
+    height: 200px;
+    background-color: var(--green05);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.box04 {
+    width: 200px;
+    height: 200px;
+    background-color: var(--green05);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.userimg {
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
+    background-color: var(--green05);
+    background-image: url(../images/leaf01.jpg);
+    background-attachment: fixed;
+    /* 固定背景圖片 */
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center center;
+}
+
+.usertext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--green05);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    /*
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+    linear-gradient(180deg) 為漸層的角度
+    */
+    padding: 15px;
+}
+
+.usertext h1 {
+    font-size: 70px;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.usertext h2 {
+    font-weight: 400;
+}
+
+.usertext p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.section02 {
+    height: 350px;
+    position: relative;
+    margin-top: 30px;
+    font-size: 36px;
+    font-weight: 500;
+} 
+
+.s2box01 {
+    height: 300px;
+    width: 300px;
+    background-color: var(--green01);
+    position: absolute;
+    left: 10%;
+    border-radius: 50%;
+    /* 設定圓角 */
+    background-image: url(../images/bird01.jpg);
+    text-align: center;
+    line-height: 300px;
+}
+
+.s2box01 a {
+    text-decoration: none;
+    color: var(--green05);
+}
+
+.s2box02 {
+    height: 300px;
+    width: 300px;
+    background-color: var(--green01);
+    position: absolute;
+    left: 50%;
+    border-radius: 50%;
+    background-image: url(../images/deer01.jpg);
+    text-align: center;
+    line-height: 300px;
+    transform: translate(-50%, 0);
+}
+
+.s2box02 a {
+    text-decoration: none;
+    color: var(--green02);
+}
+
+.s2box03 {
+    height: 300px;
+    width: 300px;
+    background-color: var(--green01);
+    position: absolute;
+    right: 10%;
+    border-radius: 50%;
+    background-image: url(../images/forest01.jpg);
+    text-align: center;
+    line-height: 300px;
+}
+
+.s2box03 a {
+    text-decoration: none;
+    color: var(--green05);
+}
+@media screen and (max-width: 1200px) {
+    .bgsize{
+        width: 220px;
+        height: 220px;
+        font-size: 28px;
+        line-height: 220px;
+    }
+}
+@media (max-width: 900px) {
+    .bgsize{
+        width: 180px;
+        height: 180px;
+        font-size: 24px;
+        line-height: 180px;
+    }
+}
+@media (max-width: 720px) {
+    .bgsize{
+        width: 140px;
+        height: 140px;
+        font-size: 20px;
+        line-height: 140px;
+    }
+}
+@media (max-width: 600px) {
+    .bgsize{
+        width: 100px;
+        height: 100px;
+        font-size: 16px;
+        line-height: 100px;
+    }
+}

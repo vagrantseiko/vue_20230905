@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500&family=Noto+Sans+TC:wght@100;300;400;500;700&display=swap');
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 10px;
+}
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.sample {
+    border: 3px solid var(--blue05);
+    margin: 10px;
+    padding: 10px;
+}
+.box01{
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    background-color: #dad7cd;
+    border: solid 1px #6c584c;
+    text-align: center;
+    line-height: 200px;
+}
+.box02{
+    height: 120px;
+    border: solid 2px #6c584c;
+    background-color: #dad7cd;
+    text-align: center;
+    line-height: 120px;
+    padding-left: 10px;
+    margin: 15px;
+    padding-right: 10px;
+}
+.box03{
+    height: auto;
+    border: solid 2px #6c584c;
+    background-color: #dad7cd;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.box11{
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    background-image: url(../images/bird01.jpg);
+    border: solid 1px #6c584c;
+    text-align: center;
+    line-height: 200px;
+    background-size: cover;
+    color: aliceblue;
+}
+.box12{
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    background-image: url(../images/flower02.jpg);
+    border: solid 1px #6c584c;
+    text-align: center;
+    line-height: 200px;
+    background-size: cover;
+    color: aliceblue;
+}
+.box13{
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    background-image: url(../images/mountain02.jpg);
+    border: solid 1px #6c584c;
+    text-align: center;
+    line-height: 200px;
+    background-size: cover;
+    color: aliceblue;
+}
+.box14{
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    background-image: url(../images/cat04.jpg);
+    border: solid 1px #6c584c;
+    text-align: center;
+    line-height: 200px;
+    background-size: cover;
+    color: aliceblue;
+}
+.box15{
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    background-image: url(../images/forest01.jpg);
+    border: solid 1px #6c584c;
+    text-align: center;
+    line-height: 200px;
+    background-size: cover;
+    color: aliceblue;
+}
+h1{
+    font-weight: 700;
+}
+.bg-cover{
+    background-size: cover;
+    background-position: center center;
+}

@@ -1,0 +1,183 @@
+:root {
+    --blue01: #012a4a;
+    --blue02: #013a63;
+    --blue03: #01497c;
+    --blue04: #014f86;
+    --blue05: #2a6f97;
+    --blue06: #2c7da0;
+    --blue07: #468faf;
+    --blue08: #61a5c2;
+    --blue09: #89c2d9;
+    --blue10: #a9d6e5;
+    --grey01: #0d1b2a;
+    --grey02: #1b263b;
+    --grey03: #415a77;
+    --grey04: #778da9;
+    --grey05: #e0e1dd;
+    --grey06: #adb5bd;
+    --grey07: #6c757d;
+    --grey08: #495057;
+    --grey09: #343a40;
+}
+
+body {
+    background-color: var(--grey05);
+    padding-top: 10px;
+}
+
+.wrapper {
+    margin: 0 auto;     /* 上下間距為0，左右auto */
+    width: 1024px;
+}
+
+.wrapper img {
+    width: 100%;
+}
+.wrapper .logo{
+    width: 100%;
+    height: 250px;
+    background-color: var(--blue02);
+    background-image: url(../images/ocean01.jpg);
+    background-size: cover;    /* 讓圖片符合 logo 的大小 */
+    background-position: center center; /* x 軸及 y 軸 */
+}
+nav {
+    background-color: var(--blue02);
+    text-align: center;
+}
+
+/* nav ul 通常與 nav ul li 一起搭配，使內容水平顯示*/
+nav ul {
+    display: inline-block;
+}
+
+nav ul li {
+    float: left;   /* float: left 內容由左至右排序*/
+    list-style-type: none;   /*將 ul 的點點去掉*/
+}
+
+nav ul li a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: var(--grey05);
+    margin-right: 2px;
+    color: var(--blue01);
+    text-decoration: none;   /* 取消文字變化 */
+    font-weight: bolder;
+}
+
+nav ul li a:hover {
+    background-color: var(--blue01);
+    color: var(--grey05);
+}
+
+
+.web_link nav{
+    background-color: var(--blue01);
+    margin-bottom: 4px;
+}
+.web_link nav ul li a{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: var(--grey06);
+    color: var(--blue01);
+}
+.web_link nav ul li a:hover{
+    background-color: var(--grey05);
+    color: var(--blue02);
+}
+.content_in{
+    background-color: var(--grey06);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    color: var(--grey08);
+    margin-top: 4px;
+}
+.content_in h1{
+    color: var(--grey01);
+}
+.content_in a{
+    display: block;
+    background-color: var(--grey09);
+    width: 150px;
+    height: 35px;
+    color: var(--grey05);
+    text-decoration: none;
+    margin: 0 auto;
+    /* line-height 等於 height讓文字上下置中 */
+    line-height: 35px;
+    font-size: 18px;
+}
+.content_in a:hover{
+    background-color: var(--grey08);
+    color: var(--grey06);
+}
+.footer{
+    background-color: var(--blue02);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    color: var(--grey06);
+    font-size: 12px;
+}
+.protrait img{
+    width: 300px;
+}
+.newsfont{
+    font-size: 18px;
+    line-height: 30px;
+}
+/* 響應式網頁：設定顯示最大的寬度為 1024px，若小於 1024px 則 wrapper 的內容自動縮放符合螢幕的 95% */
+@media screen and (max-width: 1024px) {
+    .wrapper{
+        width: 95%;
+    }
+}
+:root {
+    --blue01: #012a4a;
+    --blue02: #013a63;
+    --blue03: #01497c;
+    --blue04: #014f86;
+    --blue05: #2a6f97;
+    --blue06: #2c7da0;
+    --blue07: #468faf;
+    --blue08: #61a5c2;
+    --blue09: #89c2d9;
+    --blue10: #a9d6e5;
+    --grey01: #0d1b2a;
+    --grey02: #1b263b;
+    --grey03: #415a77;
+    --grey04: #778da9;
+    --grey05: #e0e1dd;
+    --grey06: #adb5bd;
+    --grey07: #6c757d;
+    --grey08: #495057;
+    --grey09: #343a40;
+}
+
+.album {
+    background-color: var(--grey06);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    
+}
+
+.album a:hover{
+    opacity: 77%;
+}
+
+.choose a{
+    background-color: var(--grey04);
+    color: var(--blue01);
+}

@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petso</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/spa.css">
+    <link rel="stylesheet" href="css/mycolor.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        .counter {
+            font-family: 'Rampart One', cursive;
+            font-size: 5em;
+        }
+
+        .counter:not(.is-visible) {
+            visibility: hidden;
+        }
+
+        .line-section {
+            position: relative;
+        }
+
+        .line-section:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            width: 0.5px;
+            background-color: var(--gray05);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .agree-box {
+            position: absolute;
+            bottom: 0;
+            left: 15%;
+        }
+
+        .s401 {
+            background-color: var(--gray05);
+        }
+
+        .s304_text {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--gray06);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 24px;
+        }
+
+        .s602_text {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: var(--gray06);
+            padding: 10px;
+        }
+
+        .spirit:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            transition: all 3s ease-out;
+        }
+
+        .s801_text {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            color: var(--gray05);
+            border-radius: 10px;
+        }
+
+        .s901_text {
+            color: var(--gray09);
+        }
+
+        .s901_text a {
+            text-decoration: none;
+            color: var(--gray08);
+        }
+
+        .s901_text a:hover {
+            color: var(--gray03);
+        }
+
+        .timeline_section {
+            position: relative;
+        }
+
+        .timeline_section::before {
+            position: absolute;
+            background-color: var(--gray06);
+            content: "";
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .timeline_section_point {
+            position: relative;
+        }
+
+        .timeline_section_point:before {
+            position: absolute;
+            background-color: var(--gray05);
+            content: "";
+            width: 10px;
+            height: 10px;
+            border: 2px solid var(--green07);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline_section_point:hover:before {
+            position: absolute;
+            background-color: var(--gray05);
+            content: "";
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--green07);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .s603_bg {
+            background-image: url(images/pet03.jpg);
+
+
+        }
+
+
+
+        @media screen and (max-width: 768px) {
+            .s501_text {
+                background-color: rgba(0, 0, 0, 0.4);
+                padding: 15px;
+                color: var(--gray05);
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+            }
+
+
+            .s501_pic {
+                right: 0;
+            }
+
+            .s302_text {
+                background-color: rgba(0, 0, 0, 0.4);
+                padding: 15px;
+                color: var(--gray05);
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+            }
+
+            .s303_img {
+                height: 150px;
+                width: 150px;
+
+            }
+
+
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <!-- s101 -->
+    <section id="s101" style="background-color: #222;">
+        <div class="container text-end">
+            <a href="https://www.facebook.com/petso.range" target="_blank"><i
+                    class="fa-brands fa-square-facebook text-light me-1"></i></a>
+            <a href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter text-light me-1"></i></a>
+            <a href="https://www.instagram.com/petso1992/?hl=zh-tw" target="_blank"><i
+                    class="fa-brands fa-instagram text-light"></i></a>
+        </div>
+    </section>
+
+    <!-- s201 -->
+    <section id="s201" class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><i class="fa-solid fa-paw fa-2x"></i>Petso</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"><i
+                                        class="fa-solid fa-house fa-xs"></i> 首頁</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">關於我們
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#s302">Petso好主人</a></li>
+                                    <li><a class="dropdown-item" href="#s303">最新消息</a></li>
+                                    <li><a class="dropdown-item" href="#s304">企業精神</a></li>
+                                    <li><a class="dropdown-item" href="#s401">服務內容</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#s701">店面位置</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">服務項目
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#s601">寵物美容</a></li>
+                                    <li><a class="dropdown-item" href="#s602">寵物住宿</a></li>
+                                    <li>
+                                    <li><a class="dropdown-item" href="#s603">合作醫院</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#s701">預約美容 / 住宿</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s501">寵物新聞</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s901">聯絡我們</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                      </li> -->
+                        </ul>
+                        <form class="d-flex">
+                            <label id="welcome" class="text-light mt-2 me-3"></label>
+                            <a href="#" class="btn btn-light me-1 d-block" data-bs-toggle="modal"
+                                data-bs-target="#loginModal" id="s201_login_btn">登入</a>
+                            <a href="#" class="btn btn-outline-light d-block" data-bs-toggle="modal"
+                                data-bs-target="#registerModal" id="s201_register_btn">註冊</a>
+                            <a href="20230810-control_panel.html" class="btn btn-light me-1 d-none"
+                                id="s201_manage_btn">會員管理</a>
+                            <a href="#" class="btn btn-outline-light d-none" id="s201_logout_btn">登出</a>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <!-- s301 幻燈片-->
+    <section id="s301">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active bg-cover"
+                    style="height: 620px; background-image: url(images/pet02.jpg);">
+
+                    <div class="carousel-caption d-none d-sm-block" style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5 class="fw-700">我們的堅持</h5>
+                        <p class="fw-300">是以最親民的價格，提供高品質的商品</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="height: 620px; background-image: url(images/pet10.jpg);">
+                    <div class="carousel-caption d-none d-sm-block" style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5 class="fw-700">我們的理想</h5>
+                        <p class="fw-300">是成為各位主人心中可信賴、期待交流的寵物柑仔店</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="height: 620px; background-image: url(images/pet04.jpg);">
+
+                    <div class="carousel-caption d-none d-sm-block" style="background-color: rgba(0, 0, 0, 0.3);">
+                        <h5 class="fw-700">寵物全方位服務</h5>
+                        <p class="fw-300">自民國81年(西元1992年)營業至今，服務台灣眾多的寵物寶貝與好主人</p>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- s302 關於我們 跑動數字特效 -->
+    <section id="s302" style="position: relative;">
+        <div class="row">
+            <div class="col-md-5 bg-cover s501_pic"
+                style="position: absolute; background-image: url(images/pet09.jpg); top: 0; bottom: 0; z-index: -1;">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end s501_text">
+                <div class="col-md-7 mt-3 mb-3">
+                    <h1>台灣<span class="text-warning">元老級</span>寵物服務</h1>
+                    <h1 class="fw-500">經濟實惠又夠人情味</h1>
+                    <p class="mb-3 mt-3">
+                        自民國81年(西元1992年)營業至今，服務台灣眾多的寵物寶貝與好主人，我們的堅持是以最親民的價格，提供高品質的商品；我們的理想是成為各位主人心中可信賴、期待交流的寵物柑仔店!</p>
+                    <p class="mb-3 mt-3">
+                        專注打造最貼近消費者的寵物生活提案平台，以安心自然，物有所值成本為選品原則，串聯寵物與飼主提供最適服務，構建『被寵愛』的生活提案平台。為了讓世界更好透過平台，讓更多有需要被需要的毛孩，一起展開美好生活
+                    </p>
+                    <p class="mb-3">現階段好主人正往“ 寵物全方位服務 ”盡全力邁進中！未來將有更多的30週年慶，我們願努力不懈的為您與 寵物家人 服務，希望能誕生出更多熱愛生命的寵愛故事！</p>
+                    <div class="row mt-5">
+                        <div class="col-3 text-center">
+                            <h4>獲獎數目</h4>
+                            <h4 class="counter01">20 <span class="h6">/ 項</span></h4>
+                        </div>
+                        <div class="col-3 text-center">
+                            <h4>參展次數</h4>
+                            <h4 class="counter02">25 <span class="h6">/ 次</span></h4>
+                        </div>
+                        <div class="col-3 text-center">
+                            <h4>美容證照</h4>
+                            <h4 class="counter03">6 <span class="h6">/ 張</span></h4>
+                        </div>
+                        <div class="col-3 text-center">
+                            <h4>醫療證照</h4>
+                            <h4 class="counter04">12 <span class="h6">/ 張</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s303 最新消息 -->
+    <section id="s303">
+        <div class="container-xl">
+            <div class="row mt-3 mb-3">
+                <h2 class="fw-700 text-center mb-3">最新消息</h2>
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="row wow animate__fadeInUp mb-3  align-items-center" data-wow-delay="0s"
+                            data-wow-duration="1s">
+                            <div class="col-7">
+                                <div class="row">
+                                    <div class="col-4 d-none d-sm-block d-xl-none"></div>
+                                    <div class="col-4">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#news01">
+                                            <div class="box11"></div>
+                                        </a>
+                                    </div>
+                                    <div class="col-4 d-none d-sm-block d-xl-none"></div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <span class="fw-300" style="font-size: 12px; color: var(--gray04);">2023/07/24</span>
+                                <h6 class="fw-700">為您的寵物做健檢</h6>
+                                <p class="fw-300" style="font-size: 13px;">
+                                    【2023寵物節】全台首創｜毛孩免費健檢又來啦！Petso好主人一直以來都以提供正確的小動物醫療及照護知識為核心衷旨，因為我們了解毛孩和人類一樣，都會面臨生老病死...
+                                </p>
+                                <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#news01"
+                                    style="font-size: 13px;">more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="row wow animate__fadeInUp mb-3  align-items-center" data-wow-delay="0s"
+                            data-wow-duration="2s">
+                            <div class="col-7">
+                                <div class="row">
+                                    <div class="col-4 d-none d-sm-block d-xl-none"></div>
+                                    <div class="col-4">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#news02">
+                                            <div class="box12"></div>
+                                        </a>
+                                    </div>
+                                    <div class="col-4 d-none d-sm-block d-xl-none"></div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <span class="fw-300" style="font-size: 12px; color: var(--gray04);">2023/07/15</span>
+                                <h6 class="fw-700">寵物美容再升級</h6>
+                                <p class="fw-300" style="font-size: 13px;">
+                                    為了更貼近飼主和毛孩們的需求，即日起推出「寵物洗澡美容套裝」除了外在美容服務也關心毛孩們的內在身體狀況，一共規劃兩種美容專案提供毛爸毛媽選擇，「半年票套裝」內...
+                                </p>
+                                <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#news02"
+                                    style="font-size: 13px;">more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="row wow animate__fadeInUp mb-3  align-items-center" data-wow-delay="0s"
+                            data-wow-duration="3s">
+                            <div class="col-7">
+                                <div class="row">
+                                    <div class="col-4 d-none d-sm-block d-xl-none"></div>
+                                    <div class="col-4">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#news03">
+                                            <div class="box13"></div>
+                                        </a>
+                                    </div>
+                                    <div class="col-4 d-none d-sm-block d-xl-none"></div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <span class="fw-300" style="font-size: 12px; color: var(--gray04);">2023/07/01</span>
+                                <h6 class="fw-700">寵物沙龍照終於來了</h6>
+                                <p class="fw-300" style="font-size: 13px;">
+                                    「邦尼是個星球」品牌來自「班尼頓廣告風格攝影」，秉持著紀錄生命每個重要時刻的初衷，提供孕婦照、全家福等各式寫真服務，但許多家庭還有著更重要的家人...</p>
+                                <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#news03"
+                                    style="font-size: 13px;">more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s304 企業精神-->
+    <section id="s304">
+        <div class="container mb-3">
+            <h2 class="fw-700 text-center my-3">企業精神</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center spirit p-3">
+                        <i class="fa-solid fa-address-card fa-4x me-2"></i>
+                        <div>
+                            <h4 class="fw-700 text-center">安心品質</h4>
+                            <hr>
+                            <p>堅持為毛孩的健康把關，所以提供高品質的寵物用品及玩具，讓飼主們將毛孩平凡的生活，一一化做人生中美好的回憶，並能夠安心的陪伴著毛孩們。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center spirit p-3">
+                        <i class="fa-solid fa-user-tie fa-4x me-3"></i>
+                        <div>
+                            <h4 class="fw-700 text-center">貼心客製</h4>
+                            <hr>
+                            <p>客製寵物商品，最多人做的羊毛氈、玩偶、軟陶公仔，都可擬真，但是價格差異大，能做的細節也不同。寵物相關的客製服務，我們都可以做，把回憶變成具體的物品。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center spirit p-3">
+                        <i class="fa-regular fa-handshake fa-3x me-3"></i>
+                        <div>
+                            <h4 class="fw-700 text-center">動心超值</h4>
+                            <hr>
+                            <p>我們的資深專業美容師每時每刻關注毛孩的情緒，盡力消除緊張與不安的陌生感，室內舒適明亮的寵物spa空間，讓毛孩們可以輕鬆自在的活動，舒服的享受貓狗美容服務。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center spirit p-3">
+                        <i class="fa-solid fa-briefcase fa-4x me-3"></i>
+                        <div>
+                            <h4 class="fw-700 text-center">創新提案</h4>
+                            <hr>
+                            <p>每年冬季舉辦個別規劃專屬暖心活動，搭配豐富的活動贈禮，進而提升飼主參與展覽意願，同時增加了心靈上的共鳴與展覽記憶度。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s401 服務內容-->
+    <section id="s401" class="s401 py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center"><i class="fa-solid fa-bath fa-6x my-3"></i>
+                    <h2 class="fw-700 my-3">寵物美容</h2>
+                    <p class="">專業寵物美容室，用心設計每個細節。寵物美容手法溫柔仔細，還有接送服務超貼心！寶貝們聽到洗澡不再耍賴，乾淨健康回家去。</p>
+                </div>
+                <div class="col-md-4 text-center"><i class="fa-solid fa-bed fa-6x my-3"></i>
+                    <h2 class="fw-700 my-3">寵物住宿</h2>
+                    <p class="">
+                        無論您因工作而忙碌、因急事無法兼顧都有我們代您細心陪伴心愛的毛寶貝。清新的空氣、安穩舒適的田園環境，以及可讓寵物狂奔玩鬧、慵懶趴睡的自在氛圍，讓寶貝們都能自由奔放、像顆燦爛的小太陽。</p>
+                </div>
+                <div class="col-md-4 text-center"><i class="fa-solid fa-stethoscope fa-6x my-3"></i>
+                    <h2 class="fw-700 my-3">動物醫院</h2>
+                    <p class="">牙科專屬治療室、犬貓獨立診間、高品質外科手術室，一切的準備都只為您在乎的毛寶貝，為您的毛孩家人提供最精準的診療。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s501 寵物新聞 -->
+    <section id="s501" style="position: relative;">
+        <div class="row">
+            <div class="col-md-5 bg-cover s501_pic"
+                style="position: absolute; background-image: url(images/pet06.jpg); top: 0; bottom: 0; z-index: -1;">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end s501_text wow animate__fadeInRight" data-wow-delay="0s"
+                data-wow-duration="3s">
+                <div class="col-md-7 mt-3">
+                    <h4 class="fw-700">毛孩這裡癢、那裡抓　慈愛獸醫院長朱道南直播教抗癢撇步</h4>
+                    <p>毛孩猛搔癢，總是讓飼主看得心疼又不知所措，慈愛動物醫院東森廣場分院院長朱道南表示，常見皮膚病原因有寄生蟲感染、食物過敏、異位性皮膚炎、細菌黴菌感染等，將於21日晚間8點在ETtoday寵物雲直播，與大家分享...
+                    </p>
+                    <a href="https://pets.ettoday.net/news/2543966" target="_blank" class="btn btn-warning">more</a>
+                    <div class="row mt-3">
+                        <div class="col-md-6 mb-3">
+                            <h4 class="fw-700">員工出門找牠顧店！「呆萌毛店長」穿制服無辜臉迎接：歡迎光臨～</h4>
+                            <p>整間店業績就靠本汪了！東森寵物宜蘭員山店有隻可愛的米克斯店狗「妞妞」，這天妞妞的主人要暫時出門，替妞妞穿上制服後請牠暫時顧店。結果妞妞真的表現出「毛毛店長」的架勢，坐在門口...
+                            </p>
+                            <a href="https://pets.ettoday.net/news/2543684" target="_blank"
+                                class="btn btn-warning">more</a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h4 class="fw-700">貓咪也懂聽音樂！獸醫團隊研究出貓咪最愛這種旋律 奴才快播給自家主子聽</h4>
+                            <p>許多貓咪到動物醫院都嚇得半死，因此美國的獸醫師就決定來研究放什麼樣的音樂能降低貓咪的心理壓力。本次的研究以貓咪的緊迫分數（cat stress score,
+                                CSS）、需要保定的程度...</p>
+                            <a href="https://pets.udn.com/pets/story/122672/7310346" target="_blank"
+                                class="btn btn-warning">more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s601 寵物美容-->
+    <section id="s601" style="position: relative;">
+        <div class="container">
+            <div class="row justify-content-start s501_text">
+                <div class="col-md-7">
+                    <dl class="row wow animate__fadeInLeft" data-wow-delay="0s" data-wow-duration="2.5s">
+                        <h2 class="fw-700 mt-3">寵物美容</h2>
+                        <p>專業寵物美容室，用心設計每個細節。寵物美容手法溫柔仔細，還有接送服務超貼心！寶貝們聽到洗澡不再耍賴，乾淨健康回家去。</p>
+                        <dt class="col-sm-3">小型犬</dt>
+                        <dd class="col-sm-9 fw-300">
+                            700~800元(含基礎清潔、美容、修毛等)</dd>
+                        <dt class="col-sm-3">中型犬</dt>
+                        <dd class="col-sm-9 fw-300">
+                            800~1200元(含基礎清潔、美容、修毛等)</dd>
+
+                        <dt class="col-sm-3">大型犬</dt>
+                        <dd class="col-sm-9 fw-300">
+                            1200~2200元(含基礎清潔、美容、修毛等)
+                        </dd>
+                        <dt class="col-sm-3">特大型犬</dt>
+                        <dd class="col-sm-9 fw-300">
+                            2200+元(含基礎清潔、美容、修毛等)
+                        </dd>
+                        <hr>
+                        <dt class="col-sm-3">2KG以下幼貓</dt>
+                        <dd class="col-sm-9 fw-300">200~300元</dd>
+                        <dt class="col-sm-3">短毛貓</dt>
+                        <dd class="col-sm-9 fw-300">1200+元(依實際體型調整)</dd>
+
+                        <dt class="col-sm-3">長毛貓</dt>
+                        <dd class="col-sm-9 fw-300">1300+元(依實際體型調整)</dd>
+                    </dl>
+                </div>
+                <div class="col-md-5 bg-cover s501_pic"
+                    style="position: absolute; background-image: url(images/pet07.jpg); top: 0; bottom: 0;right: 0; z-index: -1;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s602 寵物住宿 -->
+    <section id="s602" class="bg-cover" style="background-image: url(images/dog06.jpg); background-attachment: fixed;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 s602_text me-3">
+                    <h2 class="p-3 fw-700">寵物住宿</h2>
+                    <p class="fw-300">
+                        無論您因工作而忙碌、因急事無法兼顧都有我們代您細心陪伴心愛的毛寶貝。清新的空氣、安穩舒適的田園環境，以及可讓寵物狂奔玩鬧、慵懶趴睡的自在氛圍，讓寶貝們都能自由奔放、像顆燦爛的小太陽。</p>
+                    <dl class="row">
+                        <dt class="col-sm-4">特大型犬房</dt>
+                        <dd class="col-sm-8 fw-300">
+                            ＞40KG</dd>
+                        <dt class="col-sm-4">大型犬房</dt>
+                        <dd class="col-sm-8 fw-300">
+                            22-40KG</dd>
+                        <dt class="col-sm-4">中型犬房</dt>
+                        <dd class="col-sm-8 fw-300">
+                            15-21KG
+                        </dd>
+                        <dt class="col-sm-4">小型犬房</dt>
+                        <dd class="col-sm-8 fw-300">
+                            ＜15KG
+                        </dd>
+                        <div class="container">
+                            <hr>
+                        </div>
+                        <dt class="col-sm-4">貓房</dt>
+                        <dd class="col-sm-8 fw-300">無體型限制</dd>
+                    </dl>
+                </div>
+                <div class="col-md">
+                    <div class="timeline_section">
+                        <div class="row timeline_section_point flex-row-reverse align-items-center">
+                            <div class="col bg-cover m-3"
+                                style="background-image: url(images/dog05.jpg); height: 180px;">
+                            </div>
+                            <div class="col s602_text m-3">
+                                <h5 class="fw-700">一、選擇房型
+                                </h5>
+                                <p>房間依體型、體重量身打造，選擇適合寶貝的房間，讓寶貝在住宿期間也有足夠的休息空間。</p>
+                            </div>
+                        </div>
+                        <div class="row timeline_section_point align-items-center">
+                            <div class="col bg-cover m-3"
+                                style="background-image: url(images/cat04.jpg); height: 180px;">
+                            </div>
+                            <div class="col s602_text m-3">
+                                <h5 class="fw-700">二、入住登記
+                                </h5>
+                                <p>填寫您與毛寶貝的基本資料、包括寵物飲食習慣及注意事項，以及預定住宿天數。</p>
+                            </div>
+                        </div>
+                        <div class="row timeline_section_point flex-row-reverse align-items-center">
+                            <div class="col bg-cover m-3"
+                                style="background-image: url(images/dog04.jpg); height: 180px;">
+                            </div>
+                            <div class="col s602_text m-3">
+                                <h5 class="fw-700">三、結帳
+                                </h5>
+                                <p>完成結帳手續後就可以將愛寵放心交給我們囉！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- s603 合作動物醫院 -->
+    <section id="s603" class="bg-cover" style="background-image: url(images/dog06.jpg); background-attachment: fixed;">
+        <div class="wow animate__flipInX" data-wow-delay="0s" data-wow-duration="2.5s"
+            style="background-color: rgba(0, 0, 0, 0.3);">
+            <div class="container-lg">
+                <div class="row text-light">
+                    <div class="col m-3 d-none"></div>
+                    <div class="col m-3 text-center">
+                        <h2>合作醫院</h2><br>
+                        <h4 class="text-warning">吉米哈利動物醫院</h4>
+                        <h4>給毛孩全方位醫療照護</h4>
+                    </div>
+                    <div class="col m-3 d-none"></div>
+                </div>
+                <div class="row text-light pb-3">
+                    <div class="col m-3 text-center">
+                        <h4>莫忘初衷是我們的核心價值</h4>
+                        <hr>
+                        <p>For us not pets, but
+                            friends是我們27年來不變的座右銘，犬貓作為我們親密的同伴動物，值得我們為他們投入更多．我們致力發展為區域型醫療中心，整體醫療水準的提升更是我們努力的方向．如果你來到吉米哈利這個空間，希望您能得到毛小孩所需要的醫療幫助，請不要吝於給與我們指教，我們會努力做得更好．
+                        </p>
+                    </div>
+                    <div class="col m-3 text-center d-none d-lg-block">
+                        <img src="images/dog07.jpg" height="300px" width="300px" style="border-radius: 50%;">
+                    </div>
+                    <div class="col m-3">
+                        <h4>金牌貓友善認證</h4>
+                        <hr>
+                        <p>吉米哈利動物醫院連續三年榮獲國際貓科醫學會（International Society of Feline Medicine, 簡稱ISFM）」認證的「貓友善醫院（Cat
+                            Friendly Clinic）」，讓來院看診的貓能在專屬空間更加放鬆與自在，減少看診時的緊迫，讓貓咪看診舒適無壓力！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- s701 公司位置及客戶資料收集-->
+    <section id="s701">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14564.367581336399!2d120.6802077!3d24.1334107!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d1056bfbe9f%3A0x1313fba33b38a04c!2z5aW95Li75Lq65a-154mp55So5ZOB5bqX!5e0!3m2!1szh-TW!2stw!4v1690284315796!5m2!1szh-TW!2stw"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6" style="height: 520px;">
+                    <form class="position-relative">
+                        <h2 class="fw-700 mt-3">美容預約／住宿預約</h2>
+                        <label for="" class="form-label">預約項目：</label>
+                        <div class="mt-3 form-check-inline">
+                            <input type="radio" class="form-check-input" id="reserve" name="reserve" value="beauty"
+                                required>
+                            <label for="" class="form-check-label">美容</label>
+                        </div>
+                        <div class="m-3 form-check-inline">
+                            <input type="radio" class="form-check-input" id="reserve" name="reserve" value="hotel"
+                                required>
+                            <label for="" class="form-check-label">住宿</label>
+                        </div>
+                        <span class="form-text text-danger invisible" id="reserve_tip">請輸入預約項目</span><br>
+                        <label for="" class="form-label">姓名：</label>
+                        <input type="text" class="form-control" required placeholder="請輸入您的中文姓名">
+                        <!-- <div class="valid-feedback">輸入正確</div>
+                        <div class="invalid-feedback">輸入錯誤</div> -->
+                        <label for="" class="form-label mt-3">電話：</label>
+                        <input type="text" class="form-control" required placeholder="請輸入您的手機號碼 ( 例 : 0987 - 654321 )">
+                        <label for="" class="form-label mt-3">E-mail：</label>
+                        <input type="text" class="form-control" required placeholder="請輸入您的電子信箱">
+                        <div class="row">
+                            <div class="col">
+                                <label for="" class="form-label mt-3">預約日期：</label>
+                                <input type="date" id="dates" name="dates" class="form-control" required value=""
+                                    autocomplete="off">
+                            </div>
+                            <div class="col">
+                                <label for="" class="form-label mt-3">預約時間：</label>
+                                <input type="text" id="dateTime" name="dateTime" class="form-control" required readonly>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark mt-3 position-absolute end-0 wow animate__headShake"
+                            data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="infinite"
+                            id="reserve_btn">我要預約</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s801 公司徵才 -->
+    <section id="s801">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 bg-cover p-5" style="background-image: url(images/cat02.jpg); height: 300px;">
+                    <div class="row">
+                        <div class="col-md-8 s801_text">
+                            <small class="text-bg-warning p-1 rounded">加入我們</small>
+                            <h2 class="fw-700 mt-2">誠徵工作夥伴</h2>
+                            <p>工作內容：
+                            </p>
+                            <p>介紹寵物產品、賣場整理、外送服務、協助店務
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 bg-cover p-5" style="background-image: url(images/cat03.jpg); height: 300px;">
+                    <div class="row">
+                        <div class="col-md-8 s801_text">
+                            <small class="text-bg-warning p-1 rounded">加入我們</small>
+                            <h2 class="fw-700 mt-2">誠徵實習幹部</h2>
+                            <p>工作內容：
+                            </p>
+                            <p>
+                                介紹寵物產品、賣場整理、協助店務、績效檢討、回報進度
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s901 公司資訊及友站連結 -->
+    <section id="s901" class="p-3 s901_text" style="background-color: var(--gray05);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 wow animate__fadeInUp mb-3" data-wow-delay="0s" data-wow-duration="1s">
+                    <h6 class="fw-700">聯絡我們</h6>
+                    <div class="row">
+                        <div class="col-3">台中元老店</div>
+                        <div class="col-9">台中市南區復興路三段421號</div>
+                        <div class="col-3"></div>
+                        <div class="col-9">04-22227387</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">鹿港旗艦店</div>
+                        <div class="col-9">彰化縣鹿港鎮復興路126號</div>
+                        <div class="col-3"></div>
+                        <div class="col-9">04-7788383</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">雲林極光店</div>
+                        <div class="col-9">雲林縣斗六市保長路52-6號</div>
+                        <div class="col-3"></div>
+                        <div class="col-9">05-5374135</div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow animate__fadeInUp mb-3" data-wow-delay="0s" data-wow-duration="2s">
+                    <div class="row">
+                        <div class="col border-secondary  border-end text-center pb-3"><a href="#s302">關於我們</a></div>
+                        <div class="col border-secondary border-end text-center pb-3"><a href="#s601">寵物美容</a></div>
+                        <div class="col border-secondary text-center pb-3"><a href="#s501">寵物新聞</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col border-secondary border-end text-center pb-3"><a href="#s304">企業精神</a></div>
+                        <div class="col border-secondary border-end text-center pb-3"><a href="#s602">寵物住宿</a></div>
+                        <div class="col border-secondary text-center pb-3"><a href="#s801">企業徵才</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col border-secondary border-end text-center pb-3"><a href="#s401">服務內容</a></div>
+                        <div class="col border-secondary border-end text-center pb-3"><a href="#s603">合作醫院</a></div>
+                        <div class="col border-secondary text-center pb-3"><a href="#s701">店面位址</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col border-secondary border-end text-center pb-3"><a href="#s303">最新消息</a></div>
+                        <div class="col border-secondary border-end text-center pb-3"><a href="#s701">預約服務</a></div>
+                        <div class="col border-secondary text-center pb-3"><a href="#s201">會員註冊</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow animate__fadeInUp mb-3 text-center" data-wow-delay="0s" data-wow-duration="3s">
+                    <img src="images/qrcode.png" width="100px" height="100px">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- s1001 版權宣告-->
+    <section id="s1001" class="text-bg-dark text-center p-1">
+        Copyright © 好主人Petso All Rights Reserved.
+    </section>
+
+
+    <!-- LoginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header text-bg-dark">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">會員登入</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="login_username" class="form-label">會員帳號</label>
+                            <input type="text" class="form-control" placeholder="請輸入帳號" id="login_username"
+                                name="login_username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="login_password" class="form-label">會員密碼</label>
+                            <input type="password" class="form-control" placeholder="請輸入密碼" id="login_password"
+                                name="login_password">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="me-auto" data-bs-toggle="modal" data-bs-target="#registerModal">沒有帳號，我要註冊</a>
+                        <button type="button" class="btn btn-dark" id="login_btn">登入</button>
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- RegisterModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-dark">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="line-section">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <h4>會員守則</h4>
+                                        </label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"
+                                            readonly style="resize: none;">Petso會員服務條款
+基於服務消費者之精神，本公司茲就本網站會員資料保護及交易相關事宜，訂定會員條款（以下簡稱「本條款」）如下。
+凡欲申請加入本網站會員者，均應事先充分閱讀且瞭解本條款之內容，並在認同此一內容精神與同意遵守相關規定下，申請加入成為本網站購員。本公司因經營之需要得隨時修改本條款之內容，將不再另行通知修改後的條款，會以公告之方式通知會員。若您於條款修改公告後仍繼續使用本購站，即表示您同意修改後的條款並遵守。
+
+第一條：會員資料提供與保護
+申請人應依本公司提供之會員申請表格內容，詳實提供正確且完整之個人資料。前述資料如有異動，會員應主動即時通知本公司客服中心，本公司並得對會員之資格進行審查核駁。 本公司對於會員提供之資料，得不定時進行審查。如有任何經本公司認為不實、錯誤或有異常之資料，本公司得逕行予以刪除或終止其會員資格。倘有涉及不法嫌疑，本公司並得主動向司法機關舉發。 申請人如未滿二十歲者，應事先經其法定代理人同意及瞭解後，始得申請加入成為本網站購物網站會員。申請程序完畢，即視為申請人已取得法定代理人之同意及瞭解。如有違誤，申請人及其法定代理人應自負完全法律責任。 申請人（即會員）同意本公司可能會因會員使用本網站各項服務而蒐集到會員之個人資料，該等資料將會在會員與本公司間交易往來、消費者管理服務、行銷本公司或關係企業的產品服務及經營本公司營業項目等目的下，於本網站提供服務之地區內處理利用，直到本網站停止服務為止，並僅在前述目的範圍內，將會員個人資料提供給本公司關係企業、物流通路商、受本公司委託處理事務之第三人利用。會員得請求查詢、閱覽、複製、補充、更正個人資料或請求停止蒐集、處理、利用或刪除資料。個人資料應完整填寫，如填寫不實或不完整，致無法取得會員資格，將無法享有活動訊息傳遞、行銷商品及提供服務等之權益。
+
+第二條：密碼與帳號的保護
+申請人於閱讀完本條款後，按下「同意」之按鍵經完成申請加入或登錄程序後，即取得本網站網路會員資格並可取得一帳號及密碼，作為日後進入本網站之憑證。本網站並依密碼與帳號作為辨識之依據。 為維持會員個人之權益，已取得網路登錄權之本網站會員均應自行維持其密碼與帳號之機密安全，以同一個會員帳號和密碼使用會員服務所進行的所有行為，都將被認為是這位會員本人的行為，會員將負完全的責任。同時本網站將依相關法令辦理安全維護事項，防止個人資料被竊取、竄改、毀損、滅失或洩漏，如有發生帳號及密碼外洩、盜用或有其他影響密碼或帳號安全情事者，會員應立即通知本公司，本公司將於接獲消費者通知後，停止該進行交易之處理及利用或採取其他保護之措施，但上述通知不代表本公司對會員負有任何形式之賠償或補償的責任。 前項情事除因本公司故意或重大過失所致之損害者外，概由會員自行負責。本公司經消費者請求提供被冒用期間之交易資訊相關資料，經確認身分無誤後，本網站得於資訊可得範圍內提供相關資料，以防止損害擴大。對於消費者個人資料之蒐集、處理及利用，本公司得於與本條款所載之特定目的之相關範圍內，以誠實信用方法為之。特定目的消失或期限屆滿時之個人資料銷毀，本公司亦秉持誠信原則，謹慎辦理。
+
+第三條：網站連結
+緣網路科技日新月異，會員使用本網站之各項服務時，亦可能連結或接觸其他網站。不論該等網站是否經本公司同意而於本網站購置連結、廣告或其他可使消費者接觸之管道，該等網站之內容與服務，非屬本公司提供之服務範圍，會員應謹慎評估是否進入該等網站。會員於該等網站上發生之任何糾紛爭議，均與本公司無涉，如因而造成之損害或爭議，本公司不負任何法律責任。
+
+第四條：網站使用規定
+會員應依下列規定使用本網站提供之各項服務：
+1.不得登載或寄發各種廣告或有廣告嫌疑之圖形、文字或其他表徵。 2.不得冒用他人之個人資料、密碼或帳號使用本網站。 3.不得公佈、傳輸或散佈電腦病毒或其他違反公序良俗、法令規章之圖形、文字或其他表徵。 4.非經本公司同意，不得進行或引誘第三人為買賣、租賃、贈送或其他具有商業性質之行為。 5.不得進行侵害或疑似侵害本公司或第三人之名譽權、隱私秘密權、智慧財產權或其他權利之行為。 6.不得為其他違反法令規章或經本公司認為不適當之行為。 7.本公司得就會員使用情形不定時予以審查。如發現有違反前項規定之情事者，本公司得逕行予以刪除或終止其會員資格。倘有涉及不法嫌疑，本公司並得主動向司法機關舉發。
+
+第五條：服務暫停與中斷
+本網站系統或功能可能因維護、改置或變動發生服務暫停或中斷，本公司將於該暫停或中斷前以公告或其他適當之方式告知會員。本公司將以合理之方式及技術，維護會員服務之正常運作。但如有下列任一情況，本公司將逕行暫停或中斷會員服務之全部或一部，且對因此所造成任何不便或損害，均不負任何賠償或補償之責任：
+1.使用者有任何違反政府法令或本使用條款情形。 2.天災或其他不可抗力之因素所導致之服務停止或中斷。 3.非本公司所得控制之事由而致會員服務資訊顯示不正確、或遭偽造、竄改、刪除或擷取、或致系統中斷或不能正常運作時。 4.對會員服務相關軟硬體設備進行搬遷、更換、升級、保養或維修時。 5.其他不可歸責於本公司之事由所致之服務停止或中斷。
+
+第六條：智慧財產權之聲明
+本網站所使用之軟體或程式、公佈之所有圖文、檔案、資訊、網頁設計或其他內容、表徵，除法律另有規定外，均擁有智慧財產權與其他權利。任何人非權利人事先書面同意，不得逕自重製、改作、散佈或為其他妨礙權利人權益之行為。
+
+第七條：責任限制
+會員使用本網站時，在使用過程中所有的資料紀錄，以本網站資料庫所記錄之資料為準。如有發生任何糾紛，雙方將以最大誠意提出各自所儲存之電子資料記錄提交於法院或公正第三人作認定。
+
+第八條：隱私權保障
+關於會員註冊資料以及會員提供之其他特定資料，本公司都將依本條款及相關法律規定保護。但有下列情形時，不在此限：
+1.基於法律之規定、或受司法機關與其他有權機關基於法定程序之要求。 2.在緊急情況下為維護其他會員或第三人之合法權益。 3.您的行為違反會員約定條款。 4.為維護會員服務系統的正常運作。
+
+第九條：資料保密
+本公司因交易而知悉或持有消費者之交易紀錄及其他相關資料，將進行保密，並建置符合交易需求之安全機制。若發生不當使用個人資料情形，致消費者受有損害時，將依相關法律負賠償責任 。
+
+第十條：本聲明書之效力、準據法與管轄法院
+本條款中，任何條款之全部或一部份無效時，不影響其他約定之效力。會員與本公司之權利義務關係，應依本條款規範及中華民國法令為依據處理。若產生任何爭議而有訴訟必要時，以台灣台中地方法院為第一審管轄法院。本公司的任何聲明、條款如有未盡完善之處，將以最大誠意，依誠實信用、平等互惠原則，與會員共商解決之道。
+</textarea>
+                                    </div>
+                                    <div class="form-check agree-box">
+                                        <input type="checkbox" class="form-check-input" name="agree_box" id="agree_box">
+                                        <label class="form-check-label">我同意以上規則</label>
+                                        <div class="form-text text-danger visible" id="agree">請先勾選同意</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <form action="" id="register_form">
+                                    <div class="mb-3">
+                                        <label for="register_username" class="form-label">帳號設定</label>
+                                        <input type="text" class="form-control" placeholder="請設定 6 - 12 位英文或數字"
+                                            id="register_username" name="register_username">
+                                        <div class="valid-feedback" id="valid_message">帳號輸入正確</div>
+                                        <div class="invalid-feedback" id="invalid_message">字數不符，請輸入 6 - 12 位英文或數字</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="register_password" class="form-label">密碼設定</label>
+                                        <input type="password" class="form-control" placeholder="請設定 6 - 12 位英文或數字"
+                                            id="register_password" name="register_password">
+                                        <div class="valid-feedback">密碼輸入正確</div>
+                                        <div class="invalid-feedback">請輸入 6 - 12 位英文或數字</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="repassword" class="form-label">確認密碼</label>
+                                        <input type="password" class="form-control" placeholder="請再次輸入密碼"
+                                            id="repassword" name="repassword">
+                                        <div class="valid-feedback">輸入正確</div>
+                                        <div class="invalid-feedback">與密碼不相符</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nickname" class="form-label">暱稱</label>
+                                        <input type="text" class="form-control" placeholder="請設定 2 - 8 字" id="nickname"
+                                            name="nickname">
+                                        <div class="valid-feedback">輸入正確</div>
+                                        <div class="invalid-feedback">請輸入 2 - 8 字</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="birthday" class="form-label">生日</label>
+                                        <input type="date" class="form-control" placeholder="請選擇您的出生年月日" id="birthday"
+                                            name="birthday">
+                                        <div class="valid-feedback">輸入正確</div>
+                                        <div class="invalid-feedback">請選擇您的出生年月日</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">電話</label>
+                                        <input type="text" class="form-control" placeholder="請輸入您的手機號碼" id="phone"
+                                            name="phone">
+                                        <div class="valid-feedback">電話輸入正確</div>
+                                        <div class="invalid-feedback">請輸入 10 位數字</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-mail</label>
+                                        <input type="text" class="form-control" placeholder="請輸入您的電子信箱" id="email"
+                                            name="email">
+                                        <div class="valid-feedback">信箱輸入正確</div>
+                                        <div class="invalid-feedback">請正確輸入您的信箱</div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-text text-danger d-none text-center" id="finish">請先完成以上表格</div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="me-auto" data-bs-toggle="modal" data-bs-target="#loginModal">已有帳號，我要登入</a>
+                    <button type="button" class="btn btn-dark" id="register_btn">註冊</button>
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News01 -->
+    <div class="modal fade" id="news01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-bg-dark">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">最新消息</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span class="fw-300" style="font-size: 14px; color: var(--gray04);">2023/07/24</span>
+                    <h5 class="fw-700">為您的寵物做健檢</h5>
+                    <p class="fw-300">
+                        【2023寵物節】全台首創｜毛孩免費健檢又來啦！Petso好主人一直以來都以提供正確的小動物醫療及照護知識為核心衷旨，因為我們了解毛孩和人類一樣，都會面臨生老病死，把關好毛孩的健康就能及早預防某些疾病的發生。
+                    </p>
+                    <p class="fw-300">這次更升級！將毛孩健診分成7大專科！由獸醫師直接看診，搭配各式儀器檢測，要將「健康」帶給每一隻毛孩！</p>
+                    <p class="fw-300">想知道更多詳細內容，歡迎致電各服務據點諮詢。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News02 -->
+    <div class="modal fade" id="news02" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-bg-dark">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">最新消息</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span class="fw-300" style="font-size: 14px; color: var(--gray04);">2023/07/25</span>
+                    <h5 class="fw-700">寵物美容再升級</h5>
+                    <p class="fw-300">
+                        為了更貼近飼主和毛孩們的需求，即日起推出「寵物洗澡美容套裝」除了外在美容服務也關心毛孩們的內在身體狀況，一共規劃兩種美容專案提供毛爸毛媽選擇，「半年票套裝」內容包含18次洗澡及6次大美容，「年票套裝」內容包含36次洗澡、12次大美容及12次水療或SPA升級服務，給毛孩從外而內的呵護。
+                    </p>
+                    <p class="fw-300">
+                        除了提供舒適的洗澡過程在美容洗劑的選擇也嚴格把關，使用在日本已有超過40年歷史的「ZOIC柔雅」洗毛精，以植物萃取出專屬寵物的養護級洗毛精，不含刺激性化學成分，對乾燥的毛皮有修補滋潤作用也成為日本寵物美容師愛用的品牌，不用刺鼻香味掩蓋臭味，徹底清潔達到保護修護的效果，讓毛寶貝洗完澡呈現漂亮的光澤感。另外還有來自義大利的歐洲第一品牌「艾詩貝」洗毛精，含有多種營養精華，深層滋養保護皮毛，恢復角質層並防止皮屑產生，讓毛髮由內而外都閃閃動人。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News03 -->
+    <div class="modal fade" id="news03" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-bg-dark">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">最新消息</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span class="fw-300" style="font-size: 14px; color: var(--gray04);">2023/07/01</span>
+                    <h5 class="fw-700">寵物沙龍照終於來了</h5>
+                    <p class="fw-300">
+                        「邦尼是個星球」品牌來自「班尼頓廣告風格攝影」，秉持著紀錄生命每個重要時刻的初衷，提供孕婦照、全家福等各式寫真服務，但許多家庭還有著更重要的家人：毛小孩！因此班尼頓為此開創一顆寵物星球！
+                    </p>
+                    <p class="fw-300">擁有全台最大的獨棟式寵物片場，並首創：寵物專屬攝影“次元空間攝影棚”，全館近200坪、高達40種以上主題場景，是您和寶貝紀錄幸福瞬間的最佳選擇！</p>
+                    <p class="fw-300">Petso好主人將於2023/7/29開始為期兩週，與邦尼合作各式風格寵物攝影，給您與毛寵留下最美好的回憶。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <script>
+        $flag_agree = false;
+        $flag_register_username = false;
+        $flag_register_password = false;
+        $flag_repassword = false;
+        $flag_nickname = false;
+        $flag_birthday = false;
+        $flag_phone = false;
+        $flag_email = false;
+
+        $(function () {
+            // 確認 uid 是否存在，若存在傳遞至後端 check_uid_api.php 確認是否合法
+            if (getCookie('uid01') != "") {
+                // uid 存在，傳遞至後端 check_uid_api.php 確認是否合法
+                $.ajax({
+                    type: "POST",
+                    url: "api/check_uid_api.php",
+                    data: { uid: getCookie('uid01') },
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function () {
+                        alert('error-api/check_uid_api.php');
+                    }
+                })
+            }
+
+            // 會員同意勾選
+            $("#agree_box").change(function () {
+                if ($(this).is(':checked')) {
+                    console.log("on");
+                    $("#agree").removeClass("visible");
+                    $("#agree").addClass("invisible");
+                    $flag_agree = true;
+                } else {
+                    $("#agree").addClass("visible");
+                    $("#agree").removeClass("invisible");
+                    $flag_agree = false;
+                }
+            });
+
+            // 會員帳號註冊即時監聽( 前端先檢查字數是否符合，後端再檢查帳號是否已重複 )
+            $("#register_username").bind("input propertychange", function () {
+                if ($(this).val().length > 5 && $(this).val().length < 13) {
+                    // $(this).removeClass("is-invalid");
+                    // $(this).addClass("is-valid");
+                    // $flag_register_username = true;
+
+                    // 檢查帳號是否重複
+                    $.ajax({
+                        type: "POST",
+                        url: "api/register_check_api.php",
+                        data: { username: $("#register_username").val() },
+                        dataType: "json",
+                        success: showdata_uni,
+                        error: function () {
+                            alert("帳號確認錯誤-api/register_check_api.php");
+                        }
+                    });
+                } else {
+                    $("#invalid_message").text("字數不符，請輸入 6 - 12 位英文或數字");
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $flag_register_username = false;
+                }
+            });
+
+            // 會員密碼註冊即時監聽
+            $("#register_password").bind("input propertychange", function () {
+                if ($(this).val().length > 5 && $(this).val().length < 13) {
+
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $flag_register_password = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $flag_register_password = false;
+                }
+            });
+
+            // 會員密碼確認即時監聽
+            $("#repassword").bind("input propertychange", function () {
+                if ($(this).val() == $("#register_password").val()) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $flag_repassword = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $flag_repassword = false;
+                }
+            });
+
+            // 暱稱即時監聽
+            $("#nickname").bind("input propertychange", function () {
+                if ($(this).val().length > 1 && $(this).val().length < 9) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $flag_nickname = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $flag_nickname = false;
+                }
+            });
+
+            // 生日即時監聽
+            $("#birthday").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $flag_birthday = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $flag_birthday = false;
+                }
+            });
+
+            // 電話即時監聽
+            $("#phone").bind("input propertychange", function () {
+                if ($(this).val().length == 10) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $flag_phone = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $flag_phone = false;
+                }
+            });
+
+            // 信箱即時監聽
+            $("#email").bind("input propertychange", function () {
+                if (isEmail($(this).val())) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $flag_email = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $flag_email = false;
+                }
+            });
+            function isEmail(email) {
+                var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (regex.test(email)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+
+            // 註冊按鈕監聽
+            $("#register_btn").click(function () {
+                if ($flag_agree && $flag_register_username && $flag_register_password && $flag_repassword && $flag_nickname && $flag_birthday && $flag_phone && $flag_email) {
+                    //console.log("輸入正確，送出資料");
+                    $.ajax({
+                        type: "POST",
+                        url: "api/register_api.php",
+                        data: { username: $("#register_username").val(), password: $("#register_password").val(), nickname: $("#nickname").val(), birthday: $("#birthday").val(), phone: $("#phone").val(), email: $("#email").val() },
+                        dataType: "json",
+                        success: showdata_register,
+                        error: function () {
+                            alert("註冊錯誤-api/register_api.php")
+                        }
+                    });
+                } else {
+                    alert("資料不完整或不符規定");
+                }
+            });
+
+            // 登入按鈕監聽
+            $("#login_btn").click(function () {
+                // console.log($("#login_username").val());
+                // console.log($("#login_password").val());
+
+                $.ajax({
+                    type: "POST",
+                    url: "api/login_api.php",
+                    data: { username: $("#login_username").val(), password: $("#login_password").val() },
+                    dataType: "json",
+                    success: showdata_login,
+                    error: function () {
+                        alert("登入錯誤-api/login_api.php")
+                    }
+                });
+            });
+
+            // 登出按鈕監聽
+            $("#s201_logout_btn").click(function () {
+                logout();
+            });
+        });
+
+        // 註冊完後隱藏<註冊Modal>並顯示<登入Modal>
+        function showdata_register(data) {
+            if (data.state) {
+                alert(data.message);
+                $("#loginModal").modal("show");
+                $("#registerModal").modal("hide");
+            } else {
+                alert(data.message);
+            }
+        }
+
+        // 檢查帳號是否存在
+        function showdata_uni(data) {
+            //console.log("123");
+            if (data.state) {
+                // 帳號不存在，可使用
+                $("#valid_message").text("帳號不存在，可使用");
+                $("#register_username").removeClass("is-invalid");
+                $("#register_username").addClass("is-valid");
+                $flag_register_username = true;
+            } else {
+                // 帳號已存在
+                $("#invalid_message").text("此帳號已註冊過");
+                $("#register_username").removeClass("is-valid");
+                $("#register_username").addClass("is-invalid");
+                $flag_register_username = false;
+            }
+        }
+
+        // 登入帳號
+        function showdata_login(data) {
+            //console.log(data);
+            if (data.state) {
+                if (data.data[0].UserState == 'true') {
+                    alert(data.message);
+                    // 將 uid 存入 cookie
+                    setCookie('uid01', data.data[0].Uid01, 7);
+                    // loginModal 消失
+                    $("#loginModal").modal("hide");
+
+                    // 1. 登入 s201_login_btn 按鈕隱藏
+                    // 2. 註冊 s201_register_btn 按鈕隱藏
+                    // 3. 管理 s201_manage_btn 按鈕顯示
+                    // 4. 登出 s201_login_btn 按鈕顯示
+
+                    $("#s201_login_btn").addClass("d-none");
+                    $("#s201_login_btn").removeClass("d-block");
+                    $("#s201_register_btn").addClass("d-none");
+                    $("#s201_register_btn").removeClass("d-block");
+                    $("#s201_manage_btn").addClass("d-block");
+                    $("#s201_manage_btn").removeClass("d-none");
+                    $("#s201_logout_btn").addClass("d-block");
+                    $("#s201_logout_btn").removeClass("d-none");
+
+                    // 顯示歡迎詞
+                    $("#welcome").text("歡迎 " + data.data[0].Nickname + "，您好");
+
+                    // location.href = "20230810-control_panel.html"
+                } else {
+                    alert("此帳號已停權，請聯絡系統管理員。");
+                }
+
+            } else {
+                alert(data.message);
+            }
+        }
+
+        // 已登入過，再次進到網頁
+        function showdata_check_uid(data) {
+            if (data.state) {
+                // 驗證成功，表示已登入
+                $("#s201_login_btn").addClass("d-none");
+                $("#s201_login_btn").removeClass("d-block");
+                $("#s201_register_btn").addClass("d-none");
+                $("#s201_register_btn").removeClass("d-block");
+                $("#s201_manage_btn").addClass("d-block");
+                $("#s201_manage_btn").removeClass("d-none");
+                $("#s201_logout_btn").addClass("d-block");
+                $("#s201_logout_btn").removeClass("d-none");
+
+                // 顯示歡迎詞
+                $("#welcome").text("歡迎 " + data.data[0].Nickname + "，您好");
+            } else {
+                // 驗證失敗，需重新登入
+                $("#loginModal").modal("show");
+            }
+        }
+
+        // 登出帳號 (刪除 uid 並重整畫面)
+        function logout() {
+            setCookie('uid01', '', 7);
+            location.href = "20230718-SPA.html";
+        }
+
+
+        // 設定 cookie
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        // 取得 cookie
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+
+    <!-- 資料欄位清空 -->
+    <script>
+        $("#registerModal").on("hidden.bs.modal", function () {
+            $(this).find("form").trigger("reset");
+        })
+    </script>
+
+    <!-- 數字跳動效果 -->
+    <script>
+        const counterUp = window.counterUp.default
+
+        const callback = entries => {
+            entries.forEach(entry => {
+                const el = entry.target
+                if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                    counterUp(el, {
+                        duration: 2000,
+                        delay: 5,
+                    })
+                    el.classList.add('is-visible')
+                }
+            })
+        }
+
+        const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+        const el01 = document.querySelector('.counter01')
+        IO.observe(el01)
+
+        const el02 = document.querySelector('.counter02')
+        IO.observe(el02)
+
+        const el03 = document.querySelector('.counter03')
+        IO.observe(el03)
+
+        const el04 = document.querySelector('.counter04')
+        IO.observe(el04)
+
+
+        $("#dateTime").timepicker({
+            timeFormat: 'h:mm p',
+            interval: 30,
+            minTime: '10',
+            maxTime: '7:00pm',
+            defaultTime: '11',
+            startTime: '10:00',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+        });
+
+    </script>
+
+    <!-- 移動特效 -->
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>

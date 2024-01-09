@@ -1078,12 +1078,12 @@
                 // uid 存在，傳遞至後端 check_uid_api.php 確認是否合法
                 $.ajax({
                     type: "POST",
-                    url: "api/check_uid_api.php",
+                    url: "https://littlebaker.000webhostapp.com/APS_api/check_uid_api.php",
                     data: { uid: getCookie('uid01') },
                     dataType: "json",
                     success: showdata_check_uid,
                     error: function () {
-                        alert('error-api/check_uid_api.php');
+                        alert('error-https://littlebaker.000webhostapp.com/APS_api/check_uid_api.php');
                     }
                 })
             }
@@ -1112,12 +1112,12 @@
                     // 檢查帳號是否重複
                     $.ajax({
                         type: "POST",
-                        url: "api/register_check_api.php",
+                        url: "https://littlebaker.000webhostapp.com/APS_api/register_check_api.php",
                         data: { username: $("#register_username").val() },
                         dataType: "json",
                         success: showdata_uni,
                         error: function () {
-                            alert("帳號確認錯誤-api/register_check_api.php");
+                            alert("帳號確認錯誤-https://littlebaker.000webhostapp.com/APS_api/register_check_api.php");
                         }
                     });
                 } else {
@@ -1221,12 +1221,12 @@
                     //console.log("輸入正確，送出資料");
                     $.ajax({
                         type: "POST",
-                        url: "api/register_api.php",
+                        url: "https://littlebaker.000webhostapp.com/APS_api/register_api.php",
                         data: { username: $("#register_username").val(), password: $("#register_password").val(), nickname: $("#nickname").val(), birthday: $("#birthday").val(), phone: $("#phone").val(), email: $("#email").val() },
                         dataType: "json",
                         success: showdata_register,
                         error: function () {
-                            alert("註冊錯誤-api/register_api.php")
+                            alert("註冊錯誤-https://littlebaker.000webhostapp.com/APS_api/register_api.php")
                         }
                     });
                 } else {
@@ -1241,12 +1241,12 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "api/login_api.php",
+                    url: "https://littlebaker.000webhostapp.com/APS_api/login_api.php",
                     data: { username: $("#login_username").val(), password: $("#login_password").val() },
                     dataType: "json",
                     success: showdata_login,
                     error: function () {
-                        alert("登入錯誤-api/login_api.php")
+                        alert("登入錯誤-https://littlebaker.000webhostapp.com/APS_api/login_api.php")
                     }
                 });
             });

@@ -1290,34 +1290,30 @@
         function showdata_login(data) {
             //console.log(data);
             if (data.state) {
-                if (data.data[0].UserState == 'true') {
-                    alert(data.message);
-                    // 將 uid 存入 cookie
-                    setCookie('uid01', data.data[0].Uid01, 7);
-                    // loginModal 消失
-                    $("#loginModal").modal("hide");
+                alert(data.message);
+                // 將 uid 存入 cookie
+                setCookie('uid01', data.data[0].Uid01, 7);
+                // loginModal 消失
+                $("#loginModal").modal("hide");
 
-                    // 1. 登入 s201_login_btn 按鈕隱藏
-                    // 2. 註冊 s201_register_btn 按鈕隱藏
-                    // 3. 管理 s201_manage_btn 按鈕顯示
-                    // 4. 登出 s201_login_btn 按鈕顯示
+                // 1. 登入 s201_login_btn 按鈕隱藏
+                // 2. 註冊 s201_register_btn 按鈕隱藏
+                // 3. 管理 s201_manage_btn 按鈕顯示
+                // 4. 登出 s201_login_btn 按鈕顯示
 
-                    $("#s201_login_btn").addClass("d-none");
-                    $("#s201_login_btn").removeClass("d-block");
-                    $("#s201_register_btn").addClass("d-none");
-                    $("#s201_register_btn").removeClass("d-block");
-                    $("#s201_manage_btn").addClass("d-block");
-                    $("#s201_manage_btn").removeClass("d-none");
-                    $("#s201_logout_btn").addClass("d-block");
-                    $("#s201_logout_btn").removeClass("d-none");
+                $("#s201_login_btn").addClass("d-none");
+                $("#s201_login_btn").removeClass("d-block");
+                $("#s201_register_btn").addClass("d-none");
+                $("#s201_register_btn").removeClass("d-block");
+                $("#s201_manage_btn").addClass("d-block");
+                $("#s201_manage_btn").removeClass("d-none");
+                $("#s201_logout_btn").addClass("d-block");
+                $("#s201_logout_btn").removeClass("d-none");
 
-                    // 顯示歡迎詞
-                    $("#welcome").text("歡迎 " + data.data[0].Nickname + "，您好");
+                // 顯示歡迎詞
+                $("#welcome").text("歡迎 " + data.data[0].Nickname + "，您好");
 
-                    // location.href = "20230810-control_panel.html"
-                } else {
-                    alert("此帳號已停權，請聯絡系統管理員。");
-                }
+                // location.href = "20230810-control_panel.html"
 
             } else {
                 alert(data.message);
